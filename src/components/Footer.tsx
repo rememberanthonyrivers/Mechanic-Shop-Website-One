@@ -12,7 +12,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="flex items-center space-x-2 mb-8 md:mb-0">
             <Wrench className="w-8 h-8 text-blue-500" />
-            <span className="text-2xl font-bold">ARCOS</span>
+            <span className="text-2xl font-bold">Mechanic Shop</span>
           </div>
           
           <div className="flex space-x-8">
@@ -39,7 +39,7 @@ export default function Footer() {
         
         <div className="border-t border-gray-800 mt-8 pt-8 text-center md:text-left">
           <p className="text-gray-400">
-            © {new Date().getFullYear()} Arcos Mechanic Shop. All rights reserved.
+            © {new Date().getFullYear()} Mechanic Shop. All rights reserved.
           </p>
         </div>
       </div>

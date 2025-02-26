@@ -30,7 +30,7 @@ export default function Hero() {
             <div className="flex items-center space-x-4 mb-8 fade-in">
               <Wrench className="w-12 h-12 text-blue-500" />
               <h1 className="text-5xl md:text-7xl font-bold tracking-tighter">
-                ARCOS
+                Luxury Mechanic Shop
               </h1>
             </div>
             <p className="text-2xl md:text-3xl font-light text-gray-300 mb-8">
