@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-black text-white;
+  }
+}
+
+/* Custom gradient animation */
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Parallax effect */
+.parallax-container {
+  perspective: 1px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.parallax-section {
+  transform-style: preserve-3d;
+  position: relative;
+  height: 100vh;
+}
+
+.parallax-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translateZ(-1px) scale(2);
+}
+
+.parallax-content {
+  position: relative;
+  transform: translateZ(0);
+}
+
+/* Speedometer loader animation */
+.speedometer-loader {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.speedometer-loader::before {
+  content: '';
+  position: absolute;
+  width: 120px;
+  height: 60px;
+  border: 8px solid #3b82f6;
+  border-bottom: none;
+  border-radius: 120px 120px 0 0;
+}
+
+.needle {
+  position: absolute;
+  width: 4px;
+  height: 50px;
+  background: #3b82f6;
+  bottom: 10px;
+  left: 58px;
+  transform-origin: bottom;
+  transform: rotate(-90deg);
+  animation: rev-meter 1.5s infinite ease-in-out;
+}
+
+.center-point {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: #3b82f6;
+  border-radius: 50%;
+  bottom: 2px;
+  left: 52px;
+}
+
+.speed-marks {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.speed-marks::before,
+.speed-marks::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 4px;
+  background: #3b82f6;
+  top: 30px;
+}
+
+.speed-marks::before {
+  left: 10px;
+  transform: rotate(-45deg);
+}
+
+.speed-marks::after {
+  right: 10px;
+  transform: rotate(45deg);
+}
+
+@keyframes rev-meter {
+  0% { transform: rotate(-90deg); }
+  50% { transform: rotate(90deg); }
+  100% { transform: rotate(-90deg); }
+}
+
+/* Rotating border animation */
+.service-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    transparent,
+    transparent,
+    transparent,
+    #3b82f6
+  );
+  animation: rotate-border 4s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
+@keyframes rotate-border {
+  100% { transform: rotate(1turn); }
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
