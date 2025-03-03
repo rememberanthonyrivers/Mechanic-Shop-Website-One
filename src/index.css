@@ -47,6 +47,58 @@
   transform: translateZ(0);
 }
 
+/* Light streaks animation */
+.light-streak {
+  position: absolute;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.7), transparent);
+  animation: light-streak-animation 8s linear infinite;
+}
+
+.light-streak-1 {
+  width: 200%;
+  top: 20%;
+  left: -50%;
+  transform: rotate(-5deg);
+  animation-delay: 0s;
+}
+
+.light-streak-2 {
+  width: 200%;
+  top: 40%;
+  left: -50%;
+  transform: rotate(2deg);
+  animation-delay: 2s;
+}
+
+.light-streak-3 {
+  width: 200%;
+  top: 60%;
+  left: -50%;
+  transform: rotate(-3deg);
+  animation-delay: 4s;
+}
+
+@keyframes light-streak-animation {
+  0% {
+    transform: translateX(-100%) rotate(-5deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.5;
+  }
+  40% {
+    opacity: 0.3;
+  }
+  60% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(100%) rotate(-5deg);
+    opacity: 0;
+  }
+}
+
 /* Speedometer loader animation */
 .speedometer-loader {
   position: relative;
